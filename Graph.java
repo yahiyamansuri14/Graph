@@ -103,7 +103,7 @@ class Graph{
         Scanner scan=new Scanner(System.in);
         //System.out.println("Enter no of vertices");
         //vertices=scan.nextInt();
-        System.out.println("Enter no of edges");
+        System.out.println("Enter no of edges;should not be greater than 105");//edge no can't be greater than 105 because of n(n+1)/2 formula
         edges=scan.nextInt();
         Graph graph=new Graph();//creating an object of class graph
         while(count<=edges){
