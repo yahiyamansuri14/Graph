@@ -20,19 +20,7 @@ class Graph{
 			incMat[from_vertex][to_vertex]=edge;
 		}
 	}
-	//method to print incidence matrix
-	/*publicvoid printMatrix(){
-		for(int i=1;i<rows;i++)
-			System.out.print("\t"+i);
-		System.out.println();
-		for(int i=1;i<rows;i++){
-			System.out.print(" "+i);
-			for(int j=1;j<cols;j++){
-				System.out.print("\t"+incMat[i][j]);
-			}
-			System.out.println();
-		}
-	}*/
+	
 	//method to print Adjancy Matrix
 	public void printMatrix(){
 		for(int i=1;i<rows;i++)
@@ -47,6 +35,16 @@ class Graph{
 		}
 		
 	}
+	/*
+	Enable this method to find neighbour vertex using String value of the vertex then send data in String type from main method line no 130
+	public void printNeighbourVertex(String vertex){
+		int index=getIndex(vertex);
+		for(int i=1;i<rows;i++){
+			int temp=getEdge(vertex,i);
+			if(temp==1)
+				System.out.println(i+"is neighbour vertex of"+vertex);
+		}
+	}*/
 	//method to get neighbour vertex
 	public void printNeighbourVertex(int vertex){
 		for(int i=1;i<rows;i++){
@@ -72,25 +70,24 @@ class Graph{
 		}
 		return -1;
 	}
-	//method to get weight b/w two vertex
-/*	public void getDistance(String v1,String v2){
-			int vertex1=getIndex(v1);
-			int vertex2=getIndex(v2);
+
+
+		/*Enable this method if you want to get Distance through String value of vertex then send data in string format from main method line no 149
+		public void getDistance(int vertex1,int vertex2){
+			//int vertex1=getIndex(v1); 
+			//int vertex2=getIndex(v2);
 			if(vertex1<0 || vertex2<0){
-				System.out.println("Edge doesn't exist");
+				System.out.println("vertex doesn't exist");
 				return;
 			}
-				
-			int temp=getEdge(vertex1,vertex2);
-			if(temp>0)
-				System.out.println("length of edge b/1 vertex"+v1+"and vertex"+v2+"is:-"+incMat[vertex1][vertex2]);
-			else
-				System.out.println("edge doesn't exist");
-	}
-*/
+			if(incMat[vertex1][vertex2]>0 || incMat[vertex2][vertex1]>0){
+				System.out.println("weight is:-"+incMat[vertex1][vertex2]);
+			}else
+				System.out.println("Edge doesn't exist");
+		 }*/
+		 //enable this method if you want to get Distance using integer value of vertex
 		public void getDistance(int vertex1,int vertex2){
-			//int vertex1=getIndex(v1);
-			//int vertex2=getIndex(v2);
+			
 			if(vertex1<0 || vertex2<0){
 				System.out.println("vertex doesn't exist");
 				return;
